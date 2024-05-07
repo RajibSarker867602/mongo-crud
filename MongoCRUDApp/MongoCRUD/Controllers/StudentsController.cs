@@ -54,7 +54,7 @@ namespace MongoCRUD.Controllers
             if (student is null) return BadRequest("Invalid input request.");
 
             var existingStudent = await _studentRepository.GetByIdAsync(id);
-            if (existingStudent is null) return BadRequest($"Student could not found by id: {id}");
+            if (existingStudent is null) return BadRequest($"Student could not found by id:{id}");
 
             existingStudent.FirstName = student.FirstName;
             existingStudent.LastName = student.LastName;
